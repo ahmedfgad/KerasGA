@@ -90,8 +90,3 @@ print("Predictions : \n", predictions)
 mae = tensorflow.keras.losses.MeanAbsoluteError()
 abs_error = mae(data_outputs, predictions).numpy()
 print("Absolute Error : ", abs_error)
-
-# model.compile(optimizer="Adam", loss="mse", metrics=["mae"])
-
-# _ = model.fit(x, y, verbose=0)
-# r = model.predict(data_inputs)
