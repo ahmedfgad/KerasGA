@@ -101,8 +101,3 @@ ba = tensorflow.keras.metrics.BinaryAccuracy()
 ba.update_state(data_outputs, predictions)
 accuracy = ba.result().numpy()
 print("Accuracy : ", accuracy)
-
-# model.compile(optimizer="Adam", loss="mse", metrics=["mae"])
-
-# _ = model.fit(x, y, verbose=0)
-# r = model.predict(data_inputs)
