@@ -177,10 +177,6 @@ def fitness_func(solution, sol_idx):
     return solution_fitness
 
 def callback_generation(ga_instance):
-    global last_fitness, keras_ga
-
-    keras_ga.population_weights = ga_instance.population
-
     print("Generation = {generation}".format(generation=ga_instance.generations_completed))
     print("Fitness    = {fitness}".format(fitness=ga_instance.best_solution()[1]))
 
@@ -189,8 +185,6 @@ dense_layer1 = tensorflow.keras.layers.Dense(5, activation="relu")(input_layer)
 output_layer = tensorflow.keras.layers.Dense(1, activation="linear")(dense_layer1)
 
 model = tensorflow.keras.Model(inputs=input_layer, outputs=output_layer)
-
-weights_vector = pygad.kerasga.model_weights_as_vector(model=model)
 
 keras_ga = pygad.kerasga.KerasGA(model=model,
                                  num_solutions=10)
@@ -274,10 +268,6 @@ def fitness_func(solution, sol_idx):
     return solution_fitness
 
 def callback_generation(ga_instance):
-    global last_fitness, keras_ga
-
-    keras_ga.population_weights = ga_instance.population
-
     print("Generation = {generation}".format(generation=ga_instance.generations_completed))
     print("Fitness    = {fitness}".format(fitness=ga_instance.best_solution()[1]))
 
@@ -287,9 +277,6 @@ dense_layer = tensorflow.keras.layers.Dense(4, activation="relu")(input_layer)
 output_layer = tensorflow.keras.layers.Dense(2, activation="softmax")(dense_layer)
 
 model = tensorflow.keras.Model(inputs=input_layer, outputs=output_layer)
-
-# Load the all weights in the model inside a vector.
-weights_vector = pygad.kerasga.model_weights_as_vector(model=model)
 
 # Create an instance of the pygad.kerasga.KerasGA class to build the initial population.
 keras_ga = pygad.kerasga.KerasGA(model=model,
