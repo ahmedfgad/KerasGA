@@ -10,19 +10,16 @@ def fitness_func(solution, sol_idx):
                                                                  weights_vector=solution)
 
     model.set_weights(weights=model_weights_matrix)
-    
+
     predictions = model.predict(data_inputs)
+
     mae = tensorflow.keras.losses.MeanAbsoluteError()
     abs_error = mae(data_outputs, predictions).numpy() + 0.00000001
-    solution_fitness = 1.0/abs_error
+    solution_fitness = 1.0 / abs_error
 
     return solution_fitness
 
 def callback_generation(ga_instance):
-    global last_fitness, keras_ga
-
-    keras_ga.population_weights = ga_instance.population
-
     print("Generation = {generation}".format(generation=ga_instance.generations_completed))
     print("Fitness    = {fitness}".format(fitness=ga_instance.best_solution()[1]))
 
@@ -31,8 +28,6 @@ dense_layer1 = tensorflow.keras.layers.Dense(5, activation="relu")(input_layer)
 output_layer = tensorflow.keras.layers.Dense(1, activation="linear")(dense_layer1)
 
 model = tensorflow.keras.Model(inputs=input_layer, outputs=output_layer)
-
-weights_vector = pygad.kerasga.model_weights_as_vector(model=model)
 
 keras_ga = pygad.kerasga.KerasGA(model=model,
                                  num_solutions=10)
@@ -90,3 +85,8 @@ print("Predictions : \n", predictions)
 mae = tensorflow.keras.losses.MeanAbsoluteError()
 abs_error = mae(data_outputs, predictions).numpy()
 print("Absolute Error : ", abs_error)
+
+# model.compile(optimizer="Adam", loss="mse", metrics=["mae"])
+
+# _ = model.fit(x, y, verbose=0)
+# r = model.predict(data_inputs)
