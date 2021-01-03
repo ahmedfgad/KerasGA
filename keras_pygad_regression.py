@@ -9,6 +9,7 @@ def fitness_func(solution, sol_idx):
     model_weights_matrix = pygad.kerasga.model_weights_as_matrix(model=model,
                                                                  weights_vector=solution)
 
+    # Use the current solution as the model parameters.
     model.set_weights(weights=model_weights_matrix)
 
     predictions = model.predict(data_inputs)
@@ -23,6 +24,7 @@ def callback_generation(ga_instance):
     print("Generation = {generation}".format(generation=ga_instance.generations_completed))
     print("Fitness    = {fitness}".format(fitness=ga_instance.best_solution()[1]))
 
+# Create the Keras model.
 input_layer  = tensorflow.keras.layers.Input(3)
 dense_layer1 = tensorflow.keras.layers.Dense(5, activation="relu")(input_layer)
 output_layer = tensorflow.keras.layers.Dense(1, activation="linear")(dense_layer1)

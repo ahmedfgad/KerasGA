@@ -34,16 +34,16 @@ keras_ga = pygad.kerasga.KerasGA(model=model,
                                  num_solutions=10)
 
 # XOR problem inputs
-data_inputs = numpy.array([[0, 0],
-                           [0, 1],
-                           [1, 0],
-                           [1, 1]])
-
+data_inputs = numpy.array([[0.0, 0.0],
+                           [0.0, 1.0],
+                           [1.0, 0.0],
+                           [1.0, 1.0]])
+    
 # XOR problem outputs
-data_outputs = numpy.array([[1, 0],
-                            [0, 1],
-                            [0, 1],
-                            [1, 0]])
+data_outputs = numpy.array([[1.0, 0.0],
+                            [0.0, 1.0],
+                            [0.0, 1.0],
+                            [1.0, 0.0]])
 
 # Prepare the PyGAD parameters. Check the documentation for more information: https://pygad.readthedocs.io/en/latest/README_pygad_ReadTheDocs.html#pygad-ga-class
 num_generations = 250 # Number of generations.

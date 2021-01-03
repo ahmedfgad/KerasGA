@@ -1,4 +1,4 @@
-# KerasGA: Training Keras Model using the Genetic Algorithm
+# KerasGA: Training Keras Models using the Genetic Algorithm
 [KerasGA](https://github.com/ahmedfgad/KerasGA) is part of the [PyGAD](https://pypi.org/project/pygad) library for training Keras models using the genetic algorithm (GA). 
 
 The [KerasGA](https://github.com/ahmedfgad/KerasGA) project has a single module named `kerasga.py` which has a class named `KerasGA` for preparing an initial population of Keras model parameters.
@@ -47,6 +47,7 @@ The source code of the `PyGAD` modules is found in the following GitHub projects
 - [pygad.cnn](https://github.com/ahmedfgad/NumPyCNN): https://github.com/ahmedfgad/NumPyCNN
 - [pygad.gacnn](https://github.com/ahmedfgad/CNNGenetic): https://github.com/ahmedfgad/CNNGenetic
 - [pygad.kerasga](https://github.com/ahmedfgad/KerasGA): https://github.com/ahmedfgad/KerasGA
+- [pygad.torchga](https://github.com/ahmedfgad/TorchGA): https://github.com/ahmedfgad/TorchGA
 
 The documentation of PyGAD is available at [Read The Docs](https://pygad.readthedocs.io/) https://pygad.readthedocs.io.
 
