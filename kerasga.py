@@ -4,9 +4,12 @@ import numpy
 def model_weights_as_vector(model):
     weights_vector = []
 
-    for layer_weights in model.get_weights():
-        vector = numpy.reshape(layer_weights, newshape=(layer_weights.size))
-        weights_vector.extend(vector)
+    for layer in model.layers: # model.get_weights():
+        if layer.trainable:
+            layer_weights = layer.get_weights()
+            for l_weights in layer_weights:
+                vector = numpy.reshape(l_weights, newshape=(l_weights.size))
+                weights_vector.extend(vector)
 
     return numpy.array(weights_vector)
 
@@ -14,15 +17,22 @@ def model_weights_as_matrix(model, weights_vector):
     weights_matrix = []
 
     start = 0
-    for w_matrix in model.get_weights():
-        layer_weights_shape = w_matrix.shape
-        layer_weights_size = w_matrix.size
-
-        layer_weights_vector = weights_vector[start:start + layer_weights_size]
-        layer_weights_matrix = numpy.reshape(layer_weights_vector, newshape=(layer_weights_shape))
-        weights_matrix.append(layer_weights_matrix)
-
-        start = start + layer_weights_size
+    for layer_idx, layer in enumerate(model.layers): # model.get_weights():
+    # for w_matrix in model.get_weights():
+        layer_weights = layer.get_weights()
+        if layer.trainable:
+            for l_weights in layer_weights:
+                layer_weights_shape = l_weights.shape
+                layer_weights_size = l_weights.size
+        
+                layer_weights_vector = weights_vector[start:start + layer_weights_size]
+                layer_weights_matrix = numpy.reshape(layer_weights_vector, newshape=(layer_weights_shape))
+                weights_matrix.append(layer_weights_matrix)
+        
+                start = start + layer_weights_size
+        else:
+            for l_weights in layer_weights:
+                weights_matrix.append(l_weights)
 
     return weights_matrix
 
