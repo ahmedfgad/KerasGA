@@ -5,10 +5,18 @@ The [KerasGA](https://github.com/ahmedfgad/KerasGA) project has a single module 
 
 [PyGAD](https://pypi.org/project/pygad) is an open-source Python library for building the genetic algorithm and training machine learning algorithms. Check the library's documentation at [Read The Docs](https://pygad.readthedocs.io/): https://pygad.readthedocs.io
 
-Before using this project, install [PyGAD](https://pypi.org/project/pygad) via pip:
+Before using this project, install [PyGAD](https://pypi.org/project/pygad) via pip.
+
+For Windows:
 
 ```python
 pip install pygad
+```
+
+For Linux/Mac:
+
+```
+pip3 install pygad
 ```
 
 # Donation
