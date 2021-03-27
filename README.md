@@ -160,7 +160,7 @@ on_stop()
 
 # Examples
 
-Check the [PyGAD's documentation](https://pygad.readthedocs.io/en/latest/README_pygad_gacnn_ReadTheDocs.html) for more examples information. You can also find more information about the implementation of the examples.
+Check the [PyGAD's documentation](https://pygad.readthedocs.io/en/latest/README_pygad_kerasga_ReadTheDocs.html#examples) for more examples information. You can also find more information about the implementation of the examples.
 
 ## Example 1: Train Keras Regression Model
 
