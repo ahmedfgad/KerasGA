@@ -36,6 +36,15 @@ def model_weights_as_matrix(model, weights_vector):
 
     return weights_matrix
 
+def predict(model, solution, data):
+    # Fetch the parameters of the best solution.
+    solution_weights = model_weights_as_matrix(model=model,
+                                               weights_vector=solution)
+    model.set_weights(solution_weights)
+    predictions = model.predict(data)
+
+    return predictions
+
 class KerasGA:
 
     def __init__(self, model, num_solutions):
