@@ -3,7 +3,7 @@ import pygad.kerasga
 import numpy
 import pygad
 
-def fitness_func(solution, sol_idx):
+def fitness_func(ga_instanse, solution, sol_idx):
     global data_inputs, data_outputs, keras_ga, model
 
     predictions = pygad.kerasga.predict(model=model,

@@ -1,5 +1,6 @@
 import copy
 import numpy
+import tensorflow.keras
 
 def model_weights_as_vector(model):
     weights_vector = []
@@ -40,8 +41,9 @@ def predict(model, solution, data):
     # Fetch the parameters of the best solution.
     solution_weights = model_weights_as_matrix(model=model,
                                                weights_vector=solution)
-    model.set_weights(solution_weights)
-    predictions = model.predict(data)
+    _model = tensorflow.keras.models.clone_model(model)
+    _model.set_weights(solution_weights)
+    predictions = _model.predict(data)
 
     return predictions
 
