@@ -137,7 +137,7 @@ on_stop()
 
 # Examples
 
-Check the [PyGAD's documentation](https://pygad.readthedocs.io/en/latest/README_pygad_kerasga_ReadTheDocs.html#examples) for more examples information. You can also find more information about the implementation of the examples.
+Check the [PyGAD's documentation](https://pygad.readthedocs.io/en/latest/kerasga.html#examples) for more examples information. You can also find more information about the implementation of the examples.
 
 ## Example 1: Train Keras Regression Model
 
@@ -187,7 +187,7 @@ data_outputs = numpy.array([[0.1],
                             [1.3],
                             [2.5]])
 
-# Prepare the PyGAD parameters. Check the documentation for more information: https://pygad.readthedocs.io/en/latest/README_pygad_ReadTheDocs.html#pygad-ga-class
+# Prepare the PyGAD parameters. Check the documentation for more information: https://pygad.readthedocs.io/en/latest/pygad.html#pygad-ga-class
 num_generations = 250 # Number of generations.
 num_parents_mating = 5 # Number of solutions to be selected as parents in the mating pool.
 initial_population = keras_ga.population_weights # Initial population of network weights
@@ -270,7 +270,7 @@ data_outputs = numpy.array([[1, 0],
                             [0, 1],
                             [1, 0]])
 
-# Prepare the PyGAD parameters. Check the documentation for more information: https://pygad.readthedocs.io/en/latest/README_pygad_ReadTheDocs.html#pygad-ga-class
+# Prepare the PyGAD parameters. Check the documentation for more information: https://pygad.readthedocs.io/en/latest/pygad.html#pygad-ga-class
 num_generations = 250 # Number of generations.
 num_parents_mating = 5 # Number of solutions to be selected as parents in the mating pool.
 initial_population = keras_ga.population_weights # Initial population of network weights.
